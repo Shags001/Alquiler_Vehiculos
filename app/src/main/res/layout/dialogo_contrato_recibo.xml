@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardBackgroundColor="@color/superficie_tarjeta"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Encabezado Contrato -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:contentDescription="Contrato Logo"
+                    android:src="@drawable/ic_car_placeholder"
+                    app:tint="@color/color_primario" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="ALQUILER ORELLANA"
+                    android:textColor="@color/texto_principal"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CONTRATO DE ARRENDAMIENTO Y COMPROBANTE"
+                    android:textColor="@color/color_primario_oscuro"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textContratoNumero"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="Contrato #101 - Estado: ACTIVA"
+                    android:textColor="@color/texto_secundario"
+                    android:textSize="13sp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginVertical="12dp"
+                android:background="@color/linea_divisoria" />
+
+            <!-- Sección Datos del Cliente -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:text="DATOS DEL ARRENDATARIO (CLIENTE):"
+                android:textColor="@color/texto_principal"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textContratoCliente"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nombre: Carlos Orellana"
+                android:textColor="@color/texto_principal"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/textContratoDocLic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DUI: 05123984-7 | Licencia: LIC-984512"
+                android:textColor="@color/texto_secundario"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/textContratoTelefono"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Teléfono: 7845-1234"
+                android:textColor="@color/texto_secundario"
+                android:textSize="13sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginVertical="12dp"
+                android:background="@color/linea_divisoria" />
+
+            <!-- Sección Datos del Vehículo e Inspección -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:text="UNIDAD Y CONDICIONES DE INSPECCIÓN:"
+                android:textColor="@color/texto_principal"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textContratoVehiculo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vehículo: Toyota Hilux 4x4 (P-458921)"
+                android:textColor="@color/texto_principal"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/textContratoFechas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fechas: 2025-02-10 a 2025-02-15 (5 días)"
+                android:textColor="@color/texto_secundario"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/textContratoInspeccionSalida"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Salida: Km 45,200 | Gas: 100% | Llanta [SÍ] | Kit [SÍ]"
+                android:textColor="@color/texto_secundario"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/textContratoInspeccionRegreso"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Regreso: En alquiler activo"
+                android:textColor="@color/texto_secundario"
+                android:textSize="13sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginVertical="12dp"
+                android:background="@color/linea_divisoria" />
+
+            <!-- Desglose Financiero y Pagos -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:text="DESGLOSE FINANCIERO:"
+                android:textColor="@color/texto_principal"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textContratoMontoBase"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Monto Base Contratado: $325.00"
+                android:textColor="@color/texto_principal"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/textContratoRecargos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Recargos Extras por Faltantes: $0.00"
+                android:textColor="@color/texto_secundario"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/textContratoMontoTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Monto Total Final: $325.00"
+                android:textColor="@color/color_primario_oscuro"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textContratoMontoAbonado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Abonado / Recaudado: $200.00"
+                android:textColor="@color/estado_disponible"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textContratoSaldoPendiente"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Saldo Pendiente Actual: $125.00"
+                android:textColor="@color/estado_rentado"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textContratoDetalleEfectivoCambio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Efectivo Recibido: $200.00 | Cambio Entregado: $0.00"
+                android:textColor="@color/texto_secundario"
+                android:textSize="12sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginVertical="12dp"
+                android:background="@color/linea_divisoria" />
+
+            <!-- Cláusula de Términos y Condiciones -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="El arrendatario declara recibir la unidad descrita en las condiciones físicas indicadas en este contrato y se compromete a devolverla en la fecha estipulada. Cualquier retraso, faltante de combustible o daño físico generará recargos adicionales."
+                android:textColor="@color/texto_secundario"
+                android:textSize="11sp"
+                android:textStyle="italic" />
+
+            <!-- Firmas -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="120dp"
+                        android:layout_height="1dp"
+                        android:background="@color/texto_principal" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Firma Arrendador"
+                        android:textColor="@color/texto_principal"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="120dp"
+                        android:layout_height="1dp"
+                        android:background="@color/texto_principal" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Firma Cliente"
+                        android:textColor="@color/texto_principal"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnImprimirContrato"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="24dp"
+                android:text="Imprimir / Descargar Contrato"
+                android:textColor="@color/white"
+                app:backgroundTint="@color/color_primario"
+                app:cornerRadius="8dp"
+                app:icon="@drawable/ic_receipt" />
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</ScrollView>

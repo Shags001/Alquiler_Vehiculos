@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Alquiler Orellana</string>
+    <string name="titulo_login">Alquiler Orellana</string>
+    <string name="subtitulo_login">Sistema de Alquiler de Vehículos</string>
+    <string name="menu_inventario">Inventario de Vehículos</string>
+    <string name="menu_rentas">Gestión de Rentas</string>
+    <string name="menu_cobros">Cobros y Abonos</string>
+    <string name="menu_estadisticas">Estadísticas y Tablero</string>
+    <string name="menu_cerrar_sesion">Cerrar Sesión</string>
+</resources>

@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/textTituloDialogoVehiculo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="Registrar Vehículo"
+            android:textColor="@color/texto_principal"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:hint="Marca (Ej. Toyota)">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editMarcaVehiculo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapWords" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:hint="Modelo (Ej. Hilux)">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editModeloVehiculo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapWords" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:hint="Año (Ej. 2024)">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editAnioVehiculo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:hint="Placa (Ej. P-123456)">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editPlacaVehiculo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapCharacters" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:hint="Kilometraje Actual (km)">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editKmVehiculo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Medidor de Aguja de Combustible + Selector por Octavos -->
+        <TextView
+            android:id="@+id/textLabelCombustibleDialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="4dp"
+            android:text="Nivel: F (Lleno - 100%)"
+            android:textColor="@color/texto_principal"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <com.github.anastr.speedviewlib.PointerSpeedometer
+            android:id="@+id/medidorGasolinaVehiculo"
+            android:layout_width="180dp"
+            android:layout_height="130dp"
+            android:layout_gravity="center_horizontal"
+            app:sv_maxSpeed="8"
+            app:sv_minSpeed="0"
+            app:sv_pointerColor="@color/color_acento"
+            app:sv_speedometerColor="@color/linea_divisoria"
+            app:sv_textColor="@color/texto_principal"
+            app:sv_unit=""
+            app:sv_withTremble="false" />
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/sliderGasolinaVehiculo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:stepSize="1"
+            android:value="8"
+            android:valueFrom="0"
+            android:valueTo="8"
+            app:thumbColor="@color/color_primario"
+            app:trackColorActive="@color/color_primario"
+            app:trackColorInactive="@color/linea_divisoria" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:hint="Tarifa Diaria ($)">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTarifaVehiculo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6dp"
+            android:text="Tarifas de Recargos Extras (Devolución):"
+            android:textColor="@color/texto_principal"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="4dp"
+                android:hint="Llanta Faltante ($)">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTarifaLlantaVehiculo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_weight="1"
+                android:hint="Herramientas ($)">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTarifaHerramientasVehiculo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:hint="Recargo Combustible Faltante ($ por cada 1%)">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTarifaGasolinaVehiculo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAgregarFotoVehiculo"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Agregar foto"
+            app:icon="@drawable/ic_camera" />
+
+        <TextView
+            android:id="@+id/textFotosAgregadasVehiculo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fotos agregadas: 0"
+            android:textColor="@color/texto_secundario"
+            android:textSize="13sp" />
+
+    </LinearLayout>
+</ScrollView>

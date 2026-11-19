@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Paleta Exclusiva Alquiler Orellana (Sin verde ni rojo) -->
+    <color name="fondo_principal">#FFFFFF</color>
+    <color name="superficie_tarjeta">#F5F7FA</color>
+    <color name="color_primario">#29B6F6</color>
+    <color name="color_primario_oscuro">#0288D1</color>
+    <color name="color_acento">#FFCA28</color>
+    <color name="texto_principal">#546E7A</color>
+    <color name="texto_secundario">#78909C</color>
+    <color name="estado_disponible">#29B6F6</color>
+    <color name="estado_rentado">#546E7A</color>
+    <color name="linea_divisoria">#CFD8DC</color>
+</resources>

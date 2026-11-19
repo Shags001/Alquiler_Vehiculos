@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_inventario"
+            android:icon="@drawable/ic_nav_inventory"
+            android:title="@string/menu_inventario" />
+        <item
+            android:id="@+id/nav_rentas"
+            android:icon="@drawable/ic_nav_rents"
+            android:title="@string/menu_rentas" />
+        <item
+            android:id="@+id/nav_cobros"
+            android:icon="@drawable/ic_nav_payments"
+            android:title="@string/menu_cobros" />
+        <item
+            android:id="@+id/nav_estadisticas"
+            android:icon="@drawable/ic_nav_stats"
+            android:title="@string/menu_estadisticas" />
+        <item
+            android:id="@+id/nav_usuarios"
+            android:icon="@drawable/ic_nav_users"
+            android:title="Gestión de Usuarios / Perfil" />
+    </group>
+
+    <item android:title="Cuenta">
+        <menu>
+            <item
+                android:id="@+id/nav_cerrar_sesion"
+                android:icon="@drawable/ic_nav_logout"
+                android:title="@string/menu_cerrar_sesion" />
+        </menu>
+    </item>
+
+</menu>

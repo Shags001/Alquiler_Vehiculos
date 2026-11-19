@@ -1,0 +1,539 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo_principal"
+    android:orientation="vertical">
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayoutRentas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/superficie_tarjeta"
+        app:tabIndicatorColor="@color/color_primario"
+        app:tabSelectedTextColor="@color/color_primario_oscuro"
+        app:tabTextColor="@color/texto_secundario">
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Salida (Entrega)" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Regreso (Inspección)" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Historial de Rentas" />
+    </com.google.android.material.tabs.TabLayout>
+
+    <FrameLayout
+        android:id="@+id/contenedorTabRentas"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Contenedor 1: Salida (Formulario de Entrega) -->
+        <ScrollView
+            android:id="@+id/layoutTabSalida"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:text="Registro e Inspección de Salida"
+                    android:textColor="@color/texto_principal"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:text="Seleccionar Vehículo Disponible:"
+                    android:textColor="@color/texto_principal"
+                    android:textStyle="bold" />
+
+                <Spinner
+                    android:id="@+id/spinnerVehiculosSalida"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/bg_spinner_border" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:hint="Nombre Completo del Cliente">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editClienteNombreSalida"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textCapWords" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="4dp"
+                        android:layout_weight="1"
+                        android:hint="DUI / Identificación">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editClienteDocSalida"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:layout_weight="1"
+                        android:hint="Licencia de Conducir">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editClienteLicenciaSalida"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:hint="Teléfono de Contacto">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editClienteTelefonoSalida"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="phone" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnFechaInicioSalida"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="4dp"
+                        android:layout_weight="1"
+                        android:text="Fecha Inicio"
+                        app:icon="@drawable/ic_calendar" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnFechaFinSalida"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:layout_weight="1"
+                        android:text="Fecha Fin"
+                        app:icon="@drawable/ic_calendar" />
+
+                </LinearLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:hint="Kilometraje de Salida (km)">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editKmSalida"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Medidor de Aguja de Combustible + Selector por Octavos -->
+                <TextView
+                    android:id="@+id/textGasolinaSalidaLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="4dp"
+                    android:text="Gasolina de Salida: F (Lleno - 100%)"
+                    android:textColor="@color/texto_principal"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <com.github.anastr.speedviewlib.PointerSpeedometer
+                    android:id="@+id/medidorGasolinaSalida"
+                    android:layout_width="180dp"
+                    android:layout_height="130dp"
+                    android:layout_gravity="center_horizontal"
+                    app:sv_maxSpeed="8"
+                    app:sv_minSpeed="0"
+                    app:sv_pointerColor="@color/color_acento"
+                    app:sv_speedometerColor="@color/linea_divisoria"
+                    app:sv_textColor="@color/texto_principal"
+                    app:sv_unit=""
+                    app:sv_withTremble="false" />
+
+                <com.google.android.material.slider.Slider
+                    android:id="@+id/sliderGasolinaSalida"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:stepSize="1"
+                    android:value="8"
+                    android:valueFrom="0"
+                    android:valueTo="8"
+                    app:thumbColor="@color/color_primario"
+                    app:trackColorActive="@color/color_primario"
+                    app:trackColorInactive="@color/linea_divisoria" />
+
+                <CheckBox
+                    android:id="@+id/checkLlantaSalida"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Incluye Llanta de Repuesto"
+                    android:textColor="@color/texto_principal" />
+
+                <CheckBox
+                    android:id="@+id/checkHerramientasSalida"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:checked="true"
+                    android:text="Incluye Kit de Herramientas y Gato"
+                    android:textColor="@color/texto_principal" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:hint="Observaciones Físicas de Salida (Rayones, golpes, etc.)">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editObservacionesSalida"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textCapSentences" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/textCalculoTotalSalida"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:text="Monto Total Contratado: $0.00 (0 días)"
+                    android:textColor="@color/color_primario_oscuro"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnRegistrarSalida"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginBottom="24dp"
+                    android:text="Confirmar salida"
+                    android:textColor="@color/white"
+                    app:backgroundTint="@color/color_primario"
+                    app:cornerRadius="8dp" />
+
+            </LinearLayout>
+        </ScrollView>
+
+        <!-- Contenedor 2: Regreso (Inspección de Retorno) -->
+        <ScrollView
+            android:id="@+id/layoutTabRegreso"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:text="Inspección de Retorno y Devolución"
+                    android:textColor="@color/texto_principal"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:text="Seleccionar Renta Activa:"
+                    android:textColor="@color/texto_principal"
+                    android:textStyle="bold" />
+
+                <Spinner
+                    android:id="@+id/spinnerRentasActivasRegreso"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/bg_spinner_border" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    app:cardBackgroundColor="@color/superficie_tarjeta"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="2dp"
+                    app:strokeWidth="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Condiciones en la Salida"
+                            android:textColor="@color/color_primario_oscuro"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textResumenSalidaRegreso"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="Kilometraje de Salida: 45,200 km | Combustible: F (Lleno - 100%)"
+                            android:textColor="@color/texto_principal"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/textAccesoriosSalidaRegreso"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="Llanta de repuesto: Incluida | Kit de herramientas: Incluido"
+                            android:textColor="@color/texto_secundario"
+                            android:textSize="13sp" />
+
+                        <!-- Medidor Pequeño de Salida para Comparación Visual -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Medidor en Salida (Referencia de Entrega):"
+                            android:textColor="@color/texto_secundario"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <com.github.anastr.speedviewlib.PointerSpeedometer
+                            android:id="@+id/medidorResumenSalidaRegreso"
+                            android:layout_width="120dp"
+                            android:layout_height="90dp"
+                            android:layout_gravity="center_horizontal"
+                            app:sv_maxSpeed="8"
+                            app:sv_minSpeed="0"
+                            app:sv_pointerColor="@color/texto_principal"
+                            app:sv_speedometerColor="@color/linea_divisoria"
+                            app:sv_textColor="@color/texto_principal"
+                            app:sv_unit=""
+                            app:sv_withTremble="false" />
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:hint="Kilometraje de Regreso (km)">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editKmRegreso"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Medidor de Aguja de Combustible + Selector por Octavos de Regreso -->
+                <TextView
+                    android:id="@+id/textGasolinaRegresoLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="4dp"
+                    android:text="Gasolina de Regreso: F (Lleno - 100%)"
+                    android:textColor="@color/texto_principal"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <com.github.anastr.speedviewlib.PointerSpeedometer
+                    android:id="@+id/medidorGasolinaRegreso"
+                    android:layout_width="180dp"
+                    android:layout_height="130dp"
+                    android:layout_gravity="center_horizontal"
+                    app:sv_maxSpeed="8"
+                    app:sv_minSpeed="0"
+                    app:sv_pointerColor="@color/color_acento"
+                    app:sv_speedometerColor="@color/linea_divisoria"
+                    app:sv_textColor="@color/texto_principal"
+                    app:sv_unit=""
+                    app:sv_withTremble="false" />
+
+                <com.google.android.material.slider.Slider
+                    android:id="@+id/sliderGasolinaRegreso"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:stepSize="1"
+                    android:value="8"
+                    android:valueFrom="0"
+                    android:valueTo="8"
+                    app:thumbColor="@color/color_primario"
+                    app:trackColorActive="@color/color_primario"
+                    app:trackColorInactive="@color/linea_divisoria" />
+
+                <CheckBox
+                    android:id="@+id/checkLlantaRegreso"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Devuelve Llanta de Repuesto"
+                    android:textColor="@color/texto_principal" />
+
+                <CheckBox
+                    android:id="@+id/checkHerramientasRegreso"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:checked="true"
+                    android:text="Devuelve Kit de Herramientas y Gato"
+                    android:textColor="@color/texto_principal" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:hint="Observaciones Físicas de Regreso (Daños nuevos, etc.)">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editObservacionesRegreso"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textCapSentences" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/textRecargosCalculadosRegreso"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:text="Recargos Extras por Faltantes: $0.00"
+                    android:textColor="@color/estado_rentado"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnFinalizarRentaRegreso"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginBottom="24dp"
+                    android:text="Finalizar revisión"
+                    android:textColor="@color/white"
+                    app:backgroundTint="@color/color_primario"
+                    app:cornerRadius="8dp" />
+
+            </LinearLayout>
+        </ScrollView>
+
+        <!-- Contenedor 3: Historial de Rentas (RecyclerView con Buscador) -->
+        <LinearLayout
+            android:id="@+id/layoutTabHistorial"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="12dp"
+            android:visibility="gone">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputLayoutBuscadorRentasHistorial"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:hint="Buscar por DUI, nombre o licencia..."
+                app:endIconMode="clear_text"
+                app:startIconDrawable="@drawable/ic_search">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editBuscadorRentasHistorial"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:maxLines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerRentasHistorial"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clipToPadding="false"
+                    android:paddingBottom="16dp" />
+
+                <TextView
+                    android:id="@+id/textSinRentasHistorial"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="No se encontraron rentas en el historial"
+                    android:textColor="@color/texto_secundario"
+                    android:textSize="16sp"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+        </LinearLayout>
+
+    </FrameLayout>
+
+</LinearLayout>
